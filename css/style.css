@@ -3,7 +3,7 @@
 
 /* RESET STYLES ================================================== */
 html {height: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
-body {height: 100%;font-size:14px;font-family:'Open Sans', Helvetica, sans-serif;line-height: 1.428571429;color: #333333;background-color: #ffffff;}
+body {height: 100%;font-size:14px;font-family:Georgia, serif;line-height: 1.428571429;color: #333333;background-color: #ffffff;}
 h1 {margin: 0;font-weight:400;}
 canvas{display: inline-block;}
 a {color: #27c796;text-decoration: none;}
