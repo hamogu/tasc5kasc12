@@ -1,0 +1,55 @@
+{% extends "templates/basic.html" %}
+{% set active_page = "Contributions" %}
+
+{% block content %}
+<script type="text/x-mathjax-config">
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+    <div class="container clearfix mt-100 mb-20">
+         {% include "templates/globalmessage.html" ignore missing %}
+	 {% include "templates/timeline.html" ignore missing %}
+
+      <h2><span id="registration">Registration for conference</span></h2>
+      <div class="c12 row">
+<p><strong>Registration will open in March.</strong>
+	
+	        <p>Our facilities can support over 250 attendees. Based on the
+        previous TASC/KASC meetings, we expect that every interested
+        astronomer should have a chance to join in, but the only guarantee is
+		  to register early.
+		</p>
+
+	<p>Full registration includes the opening reception, talks, all coffee breaks and the social dinner.</p>
+</div>
+      <h2><span id="registration">Abstract submission</span></h2>
+      <div class="c12 row">
+<p><strong>Abstract submission will open in February.</strong></p>
+<p>In the meantime, use the form below to sign up with your email address and we will inform you when registration and abstract submission open.</p>
+{% include "templates/emailform.html" ignore missing %}
+      </div>
+
+    </div>
+
+<!--	 
+<h2><span id="Talks">Talks</span></h2>
+<div class="c12 row">
+  <p><strong>Invited speakers should plan for a talk of  25 min plus 10 min for questions. Contributed talks should be 12 min long plus 3 min for questions</strong>. The resolution of the projector is 1920 x 1080 (so the format is 16:9). Presentations need to be uploaded onto our computer before the talk, so contact an LOC member at least 2 hours before your talk. Our computers provide standard presentation software for pdf, PowerPoint, KeyNote, LibreOffice and OpenOffice as well as webbrowsers and software for common movie formats. If you have any special requirements, please contact us at <a href="mailto:cs20@cfa.harvard.edu">cs20@cfa.harvard.edu</a> <strong>before the conference</strong>.</p>
+</div>
+
+<h2><span id="Posters">Posters</span></h2>
+<div class="c12 row">
+  <p>There are two poster rooms where posters can be displayed throughout the conference (Monday to Friday). Both of them are adjacent to the main auditorium. We will provide all hardware required to hang up posters. The space for each poster is a square where each side is $$1.75\times10^{-9}R_{\odot}=122\;\textrm{cm}=4.0\;\textrm{ft}$$ long.
+  </p>  
+</div>
+-->
+
+	<!-- <h3>Registration Cancellation Policy</h3>
+	<p>Cancellations must be received in writing or via email by June 15, 2018 for a full refund less a $30 processing charge. Cancellations received June 15, 2018 through July 15, 2018 receive a 50% refund. Cancellations made after July 16, 2018, or persons who do not appear at the workshop are not eligible for any refund.</p>
+
+	<h3>Tour/Banquet Policy</h3>
+	<p>Cancellations for tours or banquet guests must be received in writing or via email by June 15, 2018 for a full refund less a $30 processing charge. Cancellations received June 15, 2018 through July 15, 2018 receive a 50% refund. Cancellations made after June 16, 2018, or persons who do not attend are not eligible for any refund. Conference registrants who do not plan on attending the banquet or other events included in the standard registration fee are not eligible for a partial refund.</p> -->
+
+
+
+{% endblock content %}

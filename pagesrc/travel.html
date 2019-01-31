@@ -1,0 +1,189 @@
+{% extends "templates/basic.html" %}
+{% set active_page = "Logistics" %}
+
+{% block content %}
+
+<div class="container clearfix mt-100 mb-20">
+         {% include "templates/globalmessage.html" ignore missing %}
+
+  <h2><span>Conference Venue</span></h2>
+  <div class="row">
+    <div class="c4">
+      <p>Wong Auditorium, MIT, 70 Memorial Drive, Cambridge</p>
+
+      <p>All talks will take place in the Wong Auditorium inside the Tang Center (Building number E51) on the MIT campus. Posters will be presented just outside the auditorium in the foyer, where all coffee and snacks will be served in the breaks.
+      </p>
+      <p><small><a href="https://github.com/CoolStars20/website/blob/master/maps/GeorgeShermanUnion.geojson">(View
+      Larger Map)</a></small></p>
+      <p> 
+	<ul class="listing">
+	  <li>large blue marker: conference venue</li>
+	  <li>green bed: BU dorms</li>
+	  <li>olive beds: Hotels with room block</li>
+	  <li>red glass: Conference banquet</li>
+	</ul>
+
+    </div>
+    <div class="container clearfix  mb-20">
+      <div class="c8">
+	<iframe height="350" width="100%" frameborder="0" src="https://render.githubusercontent.com/view/geojson?url=https://raw.githubusercontent.com/CoolStars20/website/master/maps/GeorgeShermanUnion.geojson" title="Venue (blue) and other locations"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <h2><span>Travel</span></h2>
+  <div class="c12 row">
+    <h3>Travel to Boston</h3>
+        <p>Logan Airport (IATA-code: BOS) is served by a large number of US and international airlines. Direct flight are offered to most major US and European airports. Several smaller airports exist in the Greater Boston area, but connecting from there to Boston is usually less convenient.
+	</p>
+      <h3>Transport to the Conference Venue</h3>
+
+<p><b>Public transport</b> in Boston is provided by
+	the <a href="http://mbta.com">MBTA</a>. From the airport, take the "Silver
+  Line" SL1 bus, located right outside the Terminal. (Travel starting with the
+  Silver Line from the airport is free, a measure introduced to reduce
+  congestion at the airport terminals.) Stay on the bus to the final stop
+  (South Station).</p>
+
+  <p><u>To the BU Residency Hall:</u>  Transfer to the Red Line (inbound to
+	Alewife) and depart at "Park Street" (2 stops). Change to the Green Line train
+  "B" going	outbound to "Boston College."" The Green line stop "Saint
+  Paul Street" (9 stops) is a minute walk to the hall. </p>
+
+  <p><u>To Hyatt Regency Cambridge:</u> Transfer to the Red Line (inbound to
+	Alewife) and depart at Kendall Sq ("4 stops"). Between 7:10 am and 8:40 pm,
+  every 30 minutes (10 minutes after the hour and 40 minutes after the hour),
+  the hotel complimentary shuttle picks up passengers outside of Kendall
+  Square Station/street level. An Uber/Lyft from Kendall is about $5 USD.</p>
+
+  <p>Both the <a href="http://mbta.com">MBTA</a> and <a href="https://maps.google.com">Google Maps</a>
+    offer a journey planner that has up-to-date timetables for all train and bus
+    services in Boston.
+	</p>
+
+  <ul class="listing">
+  <li><p>CharlieCard: The "Subway-only", "Subway + Local bus" and the "Local bus +
+    Subway + Local bus" combinations are all $2.25 USD. Bus-only is $1.70 USD. You can
+    get a free CharlieCard from an MBTA Customer Service Agent.</p></li>
+
+  <li><p>CharlieTicket: Both "Subway + Local bus" and the "Local Bus +
+    Subway + Local Bus" combinations are $4.75 USD. Bus-only is $2.00 USD, and like with
+    the CharlieCard, it comes with a free Bus transfer within 2 hours of the tap.
+    Subway-only is $2.75 USD with no free transfer. You can get a CharlieTicket from
+    the MBTA fare vending machines.</p></li>
+  </ul>
+
+    <p><b>A taxi</b> from the airport costs about $35-45 USD (15-20% tips are expected
+      in the US). Taxis prefer cash, but also accept all major credit cards.</p>
+
+    <p><b>App Ride/Transportation Network Companies</b>, like Uber and Lyft,
+      operate in Boston and Cambridge, and will service (pick-up and drop-off)
+      the Boston Logan Airport. The fees are typically ~$25-35 USD for single rides
+      but can fluctuate due to the demand at the time. The option to automatically
+      share a ride with other Uber/Lyft users will significantly reduce the price.
+      In order to access these rides, you must install the app on your phone and
+      have access to the internet.  Creating an account through the app and
+      registering your credit/debt card or PayPal/Google Pay is required for
+      service since the drivers will not take cash or credit.
+    </p>
+
+
+    <h3>Getting around in the city</h3>
+    <p>Public transport in Boston is provided by the <a href="http://mbta.com">MBTA</a> and Uber and Lyft are popular services, too. However, the center of Boston is relatively small with many parks and pedestrian-friendly streets, so simply walking is often the best option to get around.</p>
+
+    <p>In recent years, cycling has also become a lot more popular and many new bike lanes have been marked to increase safety, see <a href="https://www.google.com/maps/@42.3524676,-71.0871778,15z/data=!5m1!1e3">Google maps</a> for a map of bike routes. In particular, there is a very nice bike path along the Charles river. We want to point out two companies for providing bicycles:
+
+      <ul class="listing">
+	<li><a href="https://www.bluebikes.com/how-it-works">BLUEbikes</a>
+	  offers a bike share service for $10 per day. You can keep a BLUEbike for 2 hrs
+	  at a time, during a 24 hr period. Each additional 30 minutes will include an
+	  extra charge of $2.50. There are two BLUEbikes docks/Hubways around the
+	  corner of the BU residency halls, one in the corner of Washington St/Amherst St,
+	  and a three around the MIT campus. Please note that the bikes are not lightweight.
+	  Like the Uber/Lyft apps, you need to download the BLUEBikes
+	  <a href="https://bluebikes.com/app">mobile app</a> to become a member.</li>
+	<li><a href="http://www.urbanadventours.com/">Urban Adventures</a> offer a
+	  variety of bikes for rent that
+	  they will deliver to your hotel. They are more expensive (for their
+	  hybrid city bikes, the listed price is $40 for the first 24-hours and
+	  $25 for each additional day, Monday-Friday), but include helmets,
+	  locks, bike lights, and flat kits. They also offer city tours.</li>
+	</ul>
+    
+  </div>
+      <h2><span>Lodging / Hotels</span></h2>
+      <h3> Accommodation at Boston University </h3>
+      <div class="c12 row">
+	<p><strong>We will add a link for booking soon.</strong></p>
+        <p>We offer accommondation
+        in <a href="https://www.youtube.com/watch?v=0aWFonBEgE0"> BU student
+        halls</a> (green marker on map above, MBTA stop "Saint Paul Street"),
+        about 30 min on foot from the conference venue. The modern, air-conditioned
+        high-rise was opened in 2010. Apartments have four single-occupancy
+        bedrooms, two bathrooms, a kitchen (not stocked), and a living
+        area. Beds come made with linen and bath towels, and basic
+        amenities. There is a Gym in the building. Price: $88 per person per
+        night (single room, but bathroom shared with one other person) or $154
+        per person per night (single room, private bathroom).</p>
+
+	<!--  <p>Booking can be done at: 
+	  <a href="http://stay.bu.edu/coolstars2018.bnb">
+	    http://stay.bu.edu/coolstars2018.bnb</a>. On the website, pick
+	  arrival and departure date by clicking in the date box​ (Click arrow
+	  to proceed to next month) and click "SEARCH".​</p> -->
+
+	<h3> Accommodation in MIT dorms </h3>
+      <div class="c12 row">
+	<p><strong>We will add a link for booking soon.</strong></p>
+        <p>We offer accommondation in MIT dorms, located only 10-15 min on foot fron the confernece venue. Rooms are about 100 $ / night, but do not have any air conditioning (July can be hot and humid in Boston). This is probably the cheapest option close to campus.</p>
+
+	
+	<h3>Hyatt Cambridge</h3>
+	<p><strong>We will add a link for booking soon.</strong></p>
+	<p>We reserved a block of rooms in
+	the <a href="https://cambridge.regency.hyatt.com/en/hotel/home.html">
+	Hyatt Regency Cambridge</a> hotel. This is located about 15 min on foot
+	from the conference venue. Rooms are 249 $ (+ tax) per
+	  night.
+	 <!-- Book using <a href="https://aws.passkey.com/e/49549965">this
+	link</a> (valid until all rooms are reserved, but no later than July
+	16).</p> -->
+
+	<h3>Cambridge Residence Inn Marriott</h3>
+	<p><strong>We will add a link for booking soon.</strong></p>
+
+	<p>
+	We also reserved a block of room in the <a href="https://www.marriott.com/hotels/travel/boscm-residence-inn-boston-cambridge/">Cambridge Residence Inn Marriot</a> which is located right just on the northern end of the MIT campus, about 10 min on foot from the conference venue.
+	The room rate is 299.00 $ per night plus 14.45% tax.
+	<!--It comes with full hot breakfast buffet.  Book using <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Harvard%20Smithsonian%20Center%20for%20Astrophysics%5EBOSFN%60SMISMIA%60319.00%60USD%60false%602%607/29/18%608/4/18%606/29/18&app=resvlink&stop_mobi=yes">this
+	link</a> (valid until all rooms are reserved, but no later than June 29)</p>-->
+
+	
+	<h3>Other hotels and Accommodations</h3>
+	<p>
+	  The conference venue is on MITs campus, just across the river fomr downtown Boston.. Several other hotels are available in this area and can be found with any search engine or travel agency.  More affordable options should also be available via websites such as <a href="https://www.airbnb.com/">Airbnb</a> (We do not endorse any particular option. Links are provided as example only.).
+	  </p>
+      </div>
+      <h2><span>Visa Information for International Participants</span></h2>
+	
+	<p>International visitors who present an oral talk, poster, or an exhibit
+	  and whose country does not participate in the U.S. Visa Waiver Program
+	  may request a letter of participation from
+	  <a href="mailto:nevin@mit.edu?subject=letter of participation" target="_top">nevin@mit.edu</a>
+	  for a B1 Visa
+	  for Business in a timely manner. When requesting a
+	  letter of participation, please provide presentation information and
+	  full contact information (telephone and mailing address).</p>
+	
+	<p>Others who do not meet the above criteria but need a visa for entry
+	  may apply for the same Visitor Visa except it will be for the Visa for
+	  Tourism-Pleasure (B2 Visa). No support letter from TASC5/KASC12 is
+	  required.</p>
+	
+	<p>For more information and guidance regarding the Visitor Visa program,
+	please read: <a href="https://travel.state.gov/content/visas/en/general/all-visa-categories.html">Directory
+	of Visa Categories</a>.</p>
+	      
+    </div>
+
+{% endblock content %}

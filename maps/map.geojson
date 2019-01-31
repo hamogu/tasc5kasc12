@@ -1,0 +1,56 @@
+{ "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [ -71.084521, 42.36077]},
+	"properties": {	 
+	"name": "Tang Center",
+	"marker-size": "large"
+	}
+    },
+     { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [ -71.115922, 42.352333]},
+	"properties": {	 
+	"name": "BU dorm",
+	"description": "",
+	"marker-symbol": "lodging",
+	"marker-color": "#0a0"
+		}
+    },
+     { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [ -71.115922, 42.352333]},
+	"properties": {	 
+	"name": "MIT dorm",
+	"description": "",
+	"marker-symbol": "lodging",
+	"marker-color": "#0a0"
+		}
+    },
+    { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [ -71.105215, 42.354174]},
+	"properties": {	 
+	"name": "Hyatt",
+	"description": "",
+	"marker-symbol": "lodging",
+	"marker-color": "#990"
+	}
+    },
+    { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [ -71.085922, 42.363038]},
+	"properties": {	 
+	"name": "Marriot Residence Inn",
+	"description": "",
+	"marker-symbol": "lodging",
+	"marker-color": "#990"
+	}
+    },
+    { "type": "Feature",
+    "geometry": {"type": "Point", "coordinates": [ -71.083693, 42.360702]},
+	"properties": {	 
+	"name": "Samberg Center",
+	"description": "conference banquet",
+	"marker-symbol": "bar",
+	"marker-color": "#900"
+	}
+    }
+  ]
+ }

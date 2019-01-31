@@ -1,0 +1,123 @@
+{% extends "templates/basic.html" %}
+{% set active_page = "About" %}
+
+{% block content %}
+
+    <!-- Carousel ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+	{% for i in range(images | count) %}
+	<li data-target="#myCarousel" data-slide-to="{{i}}"{% if i==0 %} class="active"{% endif %}></li>
+	{% endfor %}
+      </ol>
+      <div class="carousel-inner">
+	{% for i in images %}
+        <div class="item{% if i==images[0] %} active{% endif %}">
+          <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:slide {{i}}" alt="loading image">
+          <img src="{{i}}" alt="nice pictures of Boston and the conference venue" />
+        </div>
+	{% endfor %}
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+    <div class="container clearfix mb-20">
+
+      {% include "templates/globalmessage.html" ignore missing %}
+      {% include "templates/timeline.html" ignore missing %}
+
+      <h2><span>SOC</span></h2>
+      <div class="row c12">
+	<p>To contact the SOC or LOC write
+	to: <a href="mailto:nevin@mit.edu">nevin@mit.edu</a></p>
+      </div>
+      <div class="row">
+	<div class="c12">
+	  <ul class="listing">
+	     <li>Fabienne Bastien, USA</li>
+	     <li>Margarida Cunha, Portugal</li>
+	     <li>Gerald Handler, Poland</li>
+	     <li>Christina Hedges, USA</li>
+	     <li>JJ Hermes, USA</li>
+	     <li>David Latham, USA</li>
+	     <li>Mia Lundkvist, Denmark</li>
+	     <li>László Molnár, Hungary</li>
+	     <li>Simon Murphy, Australia</li>
+	     <li>Rhita-Maria Ouazzani, France</li>
+	     <li>Jennifer van Saders, USA</li>
+	     <li>Nevin N. Weinberg, USA</li>
+	  </ul>
+	</div> 
+      </div>
+      <div class="clearfix"></div>
+      <h2><span>LOC</span></h2>
+      <div class="row c12">
+	<p>To contact the SOC or LOC write
+	to: <a href="mailto:nevin@mit.edu">nevin@mit.edu</a></p>
+      </div>
+       <div class="c12 row">
+	 <ul class="listing">
+	   <li>JJ Hermes, Boston University</li>
+	   <li>H. M. Günther, MIT</li>
+	   <li>Nevin N. Weinberg, MIT (chair)</li>
+	 </ul>
+       </div>
+       <h2><span>Organizing Institutions</span></h2>
+       <div class="row clearfix sponsor-logo">
+	 <div class="c3 img">
+	   <a href="https://www.mit.edu">
+             <img src="images/MIT-logo.png" alt="MIT logo">
+	   </a>
+         </div>
+	 <div class="c3 img">
+	   <a href="https://www.bu.edu/">
+             <img src="images/Boston_University.png" alt="Boston University logo">
+	   </a>
+         </div>
+	 <div class="c3 img">
+	   <a href="https://www.uml.edu/">
+             <img src="images/sac-logo.gif" alt="Stellar Astrophysics Centre, Aarhus, DK">
+	   </a>
+         </div>
+       </div>
+
+
+       <h2><span>Code of Conduct</span></h2>
+       <div class="c12 row">
+
+       <p>TASC5/KASC12 organizers are committed to making this meeting productive and enjoyable for everyone, regardless of gender, sexual orientation, disability, physical appearance, body size, ethnicity, nationality, or religion. We will not tolerate harassment of participants in any form. Please follow these guidelines:</p>
+
+	  <ul class="listing">
+	    <li>Behave professionally. Harassment and sexist, racist, or exclusionary comments or jokes are not appropriate. Harassment includes sustained disruption of talks or other events, inappropriate or unwelcome physical contact, sexual attention or innuendo, deliberate intimidation, stalking, and photography or recording of an individual without consent. It also includes offensive comments related to gender, sexual orientation, age, disability, physical appearance, body size, ethnicity, or religion.</li>
+	    <li>All communication should be appropriate for a professional audience of people from many different backgrounds. Sexual language and imagery is not appropriate.</li>
+	    <li>Be kind to others. Do not insult or put down other attendees.</li>
+	   </ul>
+
+	  <p>Participants asked to stop any inappropriate behaviour are expected to comply immediately. Attendees violating these rules may be asked to leave the event at the sole discretion of the organizers without a refund of any charge.  The full <a href="docs/Code_of_conduct.pdf">TASC5/KASC12 Code of Conduct</a> is available as pdf.</p>
+
+       <p>Any participant who wishes to report a violation of this policy can do so anonymously via <a href="https://goo.gl/forms/SmyKQyCLAHPuuMMp2">google web form</a> or can contact LOC representatives David Principe or Julie Skinner (see <a href="docs/Code_of_conduct.pdf">TASC5/KASC12 Code of Conduct</a> for contact information).</p>
+
+       <p>This code of conduct was originally designed for an astronomy conference in London, adapted by Andrew Pontzen and Hiranya Peiris from a document by Software Carpentry, which itself derives from original Creative Commons documents by PyCon and Geek Feminism.</p>
+
+       
+       </div>
+       <h2><span>Acknowledgements</span></h2>
+       <div class="c12 row">
+	 <ul class="listing">
+	   <li>Website template design by Veselka for <a href="http://www.andreasviklund.com">andreasviklund.com</a> </li>
+	   <li>Website development on <a href="https://github.com/hamogu/tasc5kasc12">github</a>
+	 </ul>
+       </div>
+
+       <h2><span>Previous Meetings</span></h2>
+       <div class="c12 row">
+	 <ul class="listing">
+	   <li>TASC4/KASC11 - <a href="http://conferences.au.dk/tasc4/">Aarhus, Denamrk, July 2018</a></li>
+	   <li>TASC3/KASC10 - <a href="http://www.tasc3kasc10.com/#">Birmingham, UK, July 201</a></li>
+	 </ul>
+       </div> 
+
+{% endblock content %}
