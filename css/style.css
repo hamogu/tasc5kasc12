@@ -134,8 +134,8 @@ ul.social li a.in:hover{background-position: -350px -100px;}
 .watermark {opacity: 0.5;color: BLACK;position: fixed;top: auto;left: 5%;font-size:5em}
 
 /* CONTENT ================================================== */
-.intro-text {font-size:2.05em;text-align:center;line-height:1.5em;font-weight:normal;color:#000080}
-.welcome-text {font-size:1.05em;text-align:center;line-height:1.5em;font-weight:normal;font-style: italic;}
+.intro-text {font-size:3.05em;text-align:center;line-height:1.5em;font-weight:normal;color:#000080}
+.welcome-text {font-size:2.05em;text-align:center;line-height:1.5em;font-weight:normal;font-style: italic;}
 .button-list {font-size:1.2em;text-align:center;line-height:1.5em;font-weight:normal;}
 h2 {background:transparent url('../icons/sep-line.gif') repeat-x 0 51%;font-size:1.25em;margin:20px 0;}
 h2 span{background: #fff; padding-right: 20px;color:#000080;font-weight:400;}
