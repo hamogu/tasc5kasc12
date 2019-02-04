@@ -13,7 +13,8 @@ from astropy.table import Table
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-sys.path.append('../pagepy')
+path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(path + '/../pagepy')
 from abstracts import process_google_form_value
 
 
@@ -41,7 +42,7 @@ def set_timestamp(sheet, col, row, status=''):
 def send_conf_email(dat):
     if len(dat) != 1:
         raise ValueError('Table with data for email needs to have exactly one row.')
-    with open('../../gmail.txt') as f:
+    with open(path + '/../../gmail.txt') as f:
         password = f.read()
     password = password[:-1]
     process_google_form_value(dat, autoacceptposters=True)
@@ -69,7 +70,7 @@ def send_conf_email(dat):
                                              msg['To']))
 
 
-env = Environment(loader=FileSystemLoader(['../templates']),
+env = Environment(loader=FileSystemLoader([path + '/../templates']),
                   autoescape=select_autoescape(['html']))
 
 parse_sheet_timestamp = re.compile("(?P<month>[0-9]+)/(?P<day>[0-9]+)/(?P<year>[0-9]+) (?P<hour>[0-9]+):(?P<minute>[0-9]+):(?P<second>[0-9]+)")
@@ -77,7 +78,7 @@ parse_sheet_timestamp = re.compile("(?P<month>[0-9]+)/(?P<day>[0-9]+)/(?P<year>[
 # pip install --upgrade google-auth-oauthlib
 # use creds to create a client to interact with the Google Drive API
 scope = ['https://spreadsheets.google.com/feeds']
-creds = ServiceAccountCredentials.from_json_keyfile_name('../../tasc5kasc12-6b096b90207b', scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name(path + '/../../tasc5kasc12-6b096b90207b', scope)
 client = gspread.authorize(creds)
 
 # Find a workbook by name and open the first sheet
