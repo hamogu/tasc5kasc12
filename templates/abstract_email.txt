@@ -1,0 +1,26 @@
+Dear {{dat['First author']}},
+
+we have processed your abstract so that you can see how it will be
+presented to the SOC and how it will look on our website. Please check
+it is correctly formatted. You might have to save the html to a file
+and open it as a file in a webbrowser as some email programs don't
+render the mathematical formulas correctly.
+
+If you want to change your contribution, you can simply edit it with
+the link in the initial confirmation email. We will send you another
+message like this after every change.  Although the link will continue
+to work, the SOC many not accept changes made after the deadline.
+
+Common reasons why your abstract might not format correctly:
+
+- Formulas should be written like this: $0.3\; M_\odot$.
+
+If you need assistance or notice a problem with this message, please
+contact the Moritz Günther <hgunther@mit.edu>. (Moritz Günther will
+not pass on any personally identifylable information to the SOC to
+protect the annonymous review of astracts.)
+
+Looking forward to seeing you at TASC5/KASC12!
+
+Yours,
+   Moritz

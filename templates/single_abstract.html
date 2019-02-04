@@ -1,0 +1,44 @@
+{% import "abstracts_helper.html" as abstracts %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
+    <meta name="description" content="Cool Stars 20, workshop, conference">
+    <meta name="author" content="CS20 LOC">
+    <title>Proof of abstract display in html</title>
+    <link href="https://web.mit.edu/tasc5/css/style.css" rel="stylesheet">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+  <body>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true}
+      });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+    <!-- Content -->
+    	<h2><span>How the SOC will see the abtract</span></h2>
+	<div class="c12 row">
+	  {{ abstracts.single_abs_soc(row) }}
+	</div>
+
+	<h2><span>This is how accepted abstracts will look on the website later</span></h2>
+	<div class="c12 row">
+	  {{ abstracts.single_abstract_any_type(row) }}
+	</div>
+    
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://coolstars20.github.io/js/bootstrap.js"></script>
+  </body>
+</html>
