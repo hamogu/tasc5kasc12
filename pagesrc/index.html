@@ -3,30 +3,12 @@
 
 {% block content %}
 
-    <!-- Carousel ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-	{% for i in range(images | count) %}
-	<li data-target="#myCarousel" data-slide-to="{{i}}"{% if i==0 %} class="active"{% endif %}></li>
-	{% endfor %}
-      </ol>
-      <div class="carousel-inner">
-	{% for i in images %}
-        <div class="item{% if i==images[0] %} active{% endif %}">
-          <img data-src="holder.js/900x500/auto/#777:#7a7a7a/text:slide {{i}}" alt="loading image">
-          <img src="{{i}}" alt="nice pictures of Boston and the conference venue" />
-        </div>
-	{% endfor %}
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
-
-
-    <div class="container clearfix mb-20">
+    <div class="container clearfix mb-20 mt-100">
 
       {% include "templates/globalmessage.html" ignore missing %}
+<div class="c12 row">
+<img src="images/web_logo.png" alt="nice pictures of Boston and the conference venue" />
+</div>
 
 <h2><span>Rationale</span></h2>
 <div class="c12 row">
