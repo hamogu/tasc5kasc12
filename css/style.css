@@ -6,8 +6,8 @@ html {height: 100%;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;-we
 body {height: 100%;font-size:14px;font-family:Georgia, serif;line-height: 1.428571429;color: #333333;background-color: #ffffff;}
 h1 {margin: 0;font-weight:400;}
 canvas{display: inline-block;}
-a {color: #444480;text-decoration: none;}
-a:hover,a:focus {color: #444480;text-decoration: underline;outline: none;}
+a {color: #4444ff;text-decoration: none;}
+a:hover,a:focus {color: #4444ff;text-decoration: underline;outline: none;}
 p {margin: 20px 0;}
 ol {padding: 20px;}
 ul,ol {margin-top: 0;margin-bottom: 10px;}
@@ -168,12 +168,13 @@ h3 {color:#000080;font-weight:400;}
 }
 
 .button:hover {
-  background: #dba55a;
-  background-image: -webkit-linear-gradient(top, #dba55a, #000080);
-  background-image: -moz-linear-gradient(top, #dba55a, #000080);
-  background-image: -ms-linear-gradient(top, #dba55a, #000080);
-  background-image: -o-linear-gradient(top, #dba55a, #000080);
-  background-image: linear-gradient(to bottom, #dba55a, #000080 );
+  color: #fff;
+  background: #aaaaff;
+  background-image: -webkit-linear-gradient(top, #aaaaff, #000080);
+  background-image: -moz-linear-gradient(top, #aaaaff, #000080);
+  background-image: -ms-linear-gradient(top, #aaaaff, #000080);
+  background-image: -o-linear-gradient(top, #aaaaff, #000080);
+  background-image: linear-gradient(to bottom, #aaaaff, #000080 );
   text-decoration: none;
 }
 
