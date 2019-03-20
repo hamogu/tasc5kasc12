@@ -1,0 +1,75 @@
+{% extends "templates/basic.html" %}
+{% set active_page = "Registration" %}
+
+{% block content %}
+
+<div class="container clearfix mt-100 mb-20">
+  {% include "templates/globalmessage.html" ignore missing %}
+  {% include "templates/timeline.html" ignore missing %}
+  
+  <h2><span>Registration</span></h2>
+  <div class="c12 row">
+    <h3>Online Registration</h3>
+    <p><strong>The deadline for submitting your registration and payment is July 11, 2019 at 11:59PM EDT.</strong>  Please contact <a href="mailto:tasc5@mit.edu">tasc5@mit.edu</a> with exceptional cases after July 11. Payment is due upon registration if paying via credit card or upon receipt of your invoice if paying by another method. Space cannot be guaranteed for any registration that is not paid in full by this date. Onsite registration may be offered on a space available basis by cash or check only.</p>
+
+    <p>Registration and payment is handeled by a separate server at <a href="https://cvent.me/mmKo9">https://cvent.me/mmKo9</a>.</p>
+
+    <h3>Registration Fees (in USD)</h3>
+    
+    <table border="2">
+      <tr>
+	<td></td>
+	<td>Early Rate<br>
+	  <i>Valid through May 31, 2019 at 11:59PM EDT</i></td>
+	<td>Late Rate<br>
+	  <i>Valid starting June 1, 2019 at 12:00AM EDT</i></td>
+      </tr>
+      <tr>
+	<td>Standard Participant</td>
+	<td>$470</td>
+	<td>$580</td>
+      </tr>
+      <tr>
+	<td>Student<br>
+	  <i>Valid for undergraduate, graduate, masters, and PhD students only. (*)</i>
+	</td>
+	<td>$250</td>
+	<td>$350</td>
+      </tr>
+    </table>
+    
+    <p><i>(*): Valid student ID is required. If a valid student ID is not provided, standard rates apply.</i></p>
+
+    <h4>What's included</h4>
+    <ul class="listing">
+      <li>All sessions and program materials</li>
+      <li>Coffee breaks as detailed on agenda</li>
+      <li>Welcome reception on Sunday, July 21</li>
+      <li>Conference dinner on Thursday, July 25</li>
+    </ul>
+    
+    <h4>Guest Registration</h4>
+    Workshop attendees may register a guest for $200. The following events are included with guest registration. Note: sessions and program materials are not included.
+    <ul class="listing">
+      <li>Welcome reception on Sunday, July 21</li>
+      <li>Conference dinner on Thursday, July 25</li>
+    </ul>
+    
+    
+    <h3>Cancellations and Changes</h3>
+    <p>Cancellations, substitutions, and other changes may be made online until July 17, 2019 at 11:59PM EDT. To cancel or make a change after that date, please send email to conferences-www@mit.edu. Cancellations received in writing will recieve a refund less a processing fee as follows:</p>
+    
+    <ul class="listing">
+      <li>Refund equal to 75% of the amount paid, if cancellation is received prior to May 31, 2019 at 11:59PM EDT.</li>
+      <li>Refund equal to 25% of the amount paid, if cancellation is recieved prior to July 1, 2019 at 11:59PM EDT.</li>
+    </ul>
+    
+    <p>No refunds will be given after this date. No refunds will be given for portions of the registration not being used. All refunds will be made in US dollars and will be processed in the manner in which the original payment was submitted, with the possible exception of wire payments which, at the organizers' discretion, may be refunded via check. Credit card refunds will be issued to the original card that was used to make the original payment.</p>
+
+    <h3>Accessibility</h3>
+    <p>To request disability accommodations, please email MIT Conference Services at <a href="mailto:conferences-www@mit.edu">conferences-www@mit.edu</a>.</p>
+  </div>
+</div>
+
+
+{% endblock content %}
