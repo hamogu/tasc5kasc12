@@ -4,15 +4,15 @@ import numpy as np
 import csv
 from astropy.table import Table, Column, join
 
-dates = {'': [2018, 8, 28],  # Posters don't have a date. They should be displayed last.
-         'TBA': [2018, 7, 28],
-         'Sun': [2018, 7, 21],
-         'Mon': [2018, 7, 22],
-         'Tue': [2018, 7, 23],
-         'Wed': [2018, 7, 24],
-         'Thu': [2018, 7, 25],
-         'Fri': [2018, 7, 26],
-         'Sat': [2018, 7, 27]}
+dates = {'': [2019, 8, 28],  # Posters don't have a date. They should be displayed last.
+         'TBA': [2019, 7, 28],
+         'Sun': [2019, 7, 21],
+         'Mon': [2019, 7, 22],
+         'Tue': [2019, 7, 23],
+         'Wed': [2019, 7, 24],
+         'Thu': [2019, 7, 25],
+         'Fri': [2019, 7, 26],
+         'Sat': [2019, 7, 27]}
 '''Mapping between 3-character day code and date'''
 
 
@@ -83,15 +83,24 @@ def write_json_abstracts(abstr):
     data = {'data': []}
     for row in abstr:
         data['data'].append({'type': contribtype[row['type']],
-                             'author': row['First author'],
-                             'authorlist': row['Authors'],
-                             'affiliations': row['affiliations'],
+                             #'author': row['First author'],
+                             #'authorlist': row['Authors'],
+                             #'affiliations': row['affiliations'],
+                             'author': 'anonymous',
+                             'authorlist': 'anonymous',
+                             'affiliations': 'anonymous',
+
                              'abstract': '<p class="abstract">' + row['Abstract'].replace('\n\n', '</p><p class="abstract">') + '</p>',
-                             'title': row['Title'],
-                             'authoremail': "<a href='mailto:{0}'>{0}</a>".format(row['Email Address']) if row['Publish first author contact information?'] else '--',
-                             'link': '<a href="{0}">{0}</a>'.format(row['Link to electronic material']) if row['Link to electronic material'] else '--',
+                             'title': row['Title of presentation'],
+                             #'authoremail': "<a href='mailto:{0}'>{0}</a>".format(row['Email Address']) if row['Publish first author contact information?'] else '--',
+                             #'link': '<a href="{0}">{0}</a>'.format(row['Link to electronic material']) if row['Link to electronic material'] else '--',
+                             #'loctime': loctime(row),
+                             #'index': row['index'],
+                             'authoremail': '--',
+                             'link': '--',
                              'loctime': loctime(row),
                              'index': row['index'],
+                             'idnum': row['idnum']
                              })
     with open('data/abstracts.json', 'w') as fp:
         json.dump(data, fp)
@@ -185,10 +194,10 @@ def data(**kwargs):
     ind_poster = abstr['type'] == 'poster'
 
     talks = abstr[ind_talk]
-    talks.sort(['binary_time', 'type', 'Select a major science topic'])
+    talks.sort(['binary_time', 'type', 'idnum'])
     posters = abstr[ind_poster]
     posters['intnumber'] = [int(i) for i in posters['poster number']]
-    posters.sort(['intnumber', 'Authors'])
+    posters.sort(['intnumber', 'First author'])
 
     # List all entries that do not have a valid type
     notype = abstr[~ind_talk & ~ind_poster]
@@ -196,7 +205,7 @@ def data(**kwargs):
     if len(notype) > 0:
         print('The following entries do not have a valid "type" entry, which would classify them as talk or poster:')
         for r in notype:
-            print(r['Timestamp'], r['type'], r['Title'])
+            print(r['Timestamp'], r['type'], r['Title of presentation'])
 
     if not kwargs['output_unassigned']:
         abstr = abstr[abstr['type'] != '']
@@ -204,7 +213,8 @@ def data(**kwargs):
     abstr['index'] = np.arange(1.0 * len(abstr))
     write_json_abstracts(abstr)
 
-    #notype.sort(['Select a major science topic', 'Authors'])
+    notype['intnumber'] = [int(i) for i in notype['idnum']]
+    notype.sort(['intnumber'])
     unass = notype if kwargs['output_unassigned'] else []
 
     return {'talks': talks, 'posters': posters, 'unassigned': unass}

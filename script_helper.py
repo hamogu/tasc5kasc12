@@ -1,10 +1,10 @@
 import argparse
 
-parser = argparse.ArgumentParser(description='Generate webpages for CS20. We want to generate statics pages for simplicity, but might read in some database (e.g. the database of abstracts) when doing so.')
+parser = argparse.ArgumentParser(description='Generate webpages for TASC5. We want to generate statics pages for simplicity, but might read in some database (e.g. the database of abstracts) when doing so.')
 parser.add_argument('outpath',
                     help='base directory for output')
 parser.add_argument('-a', '--abstracts',
-                    #default='../data/abstracts.csv',
+                    default='../abstracts.csv',
                     help='csv file with abstracts')
 parser.add_argument('--output-unassigned', action='store_true',
                     help='Output presentations that do not have a "type" entry in the table')

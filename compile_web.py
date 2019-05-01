@@ -68,7 +68,7 @@ for d in ['css', 'fonts', 'images', 'js', 'maps', 'docs', 'icons']:
 outdir = os.path.join(args.outpath, 'data')
 if not os.path.exists(outdir):
     os.makedirs(outdir)
-#shutil.copy('data/abstracts.json', outdir)
+shutil.copy('data/abstracts.json', outdir)
 
 
 # copy favicons which should live in root directory
