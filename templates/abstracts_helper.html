@@ -3,7 +3,7 @@
   <a href="#talks">talks</a>
   <a href="#posters">posters</a>
 </p>
-<a name="{{ t['Title or presentation'] }}"></a>
+<a name="{{ t['Title of presentation'] }}"></a>
 <h3>
   {% if t['Link to electronic material'] %}
   <a href='{{ t['Link to electronic material'] }}'>
@@ -16,8 +16,8 @@
 {% macro authoraffilabstract(t) -%}
 <p><strong>{%- if t['Publish first author contact information?'] %}<a href='mailto:{{ t['Email Address'] }}'>{% endif %}
 {{ t['authorlist'][0] }}{%- if t['Publish first author contact information?']
-      %}</a>{%- endif %}</strong>{%- for a in t['authorlist'][1:] %}; {{ a }}{%
-  endfor %}{{ t['team'] }}<br>
+      %}</a>{%- endif %}{%- for a in t['authorlist'][1:] %}; {{ a }}{%
+  endfor %}{{ t['team'] }}</strong><br>
   {{ t['affiliations'] }}
 </p>
 <p class="abstracts">{{ t['Abstract']|replace('\n\n', '</p><p class="abstracts">'|safe) }}</p>
@@ -25,10 +25,12 @@
 
 {% macro single_abstract_any_type(t) -%}
 {{ talktitle(t) }}
-{% if ((t['type'] == 'invited') or (t['type'] == 'contributed')) %}
-    <p class="locationschedule">
+{% if ((t['type'] == 'invited') or (t['type'] == 'talk') or (t['type'] ==
+'invited software')) %}
+    <p class="locationschedule">topic: {{ t['topic'] }}<br>
       <em>schedule: {{ t['day']|default('TBA', true) }}, {{
-	t['time']|default('TBA', true) }} {% if t['type'] == 'invited' %} (invited) {% endif %}</em></p>
+	t['time']|default('TBA', true) }} {% if t['type'] == 'invited' %}
+	(invited) {% endif %}{% if t['type'] == 'invited software' %} (invited software) {% endif %}</em></p>
 {% elif t['type'] == 'poster' %}
     <p class="locationschedule"> <em>poster number: {{ t['poster number']|default('TBA') }}</em></p>
 {% else %}

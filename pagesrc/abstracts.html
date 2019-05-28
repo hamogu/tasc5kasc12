@@ -1,0 +1,108 @@
+{% extends "templates/basic.html" %}
+{% import "templates/abstracts_helper.html" as abstracts %}
+{% set active_page = "Abstracts" %}
+
+{% block content %}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true}
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="js/abstractstab.js"></script>
+	
+
+    <div class="container clearfix mt-100 mb-20">
+      {% include "templates/globalmessage.html" ignore missing %}
+      {% include "templates/timeline.html" ignore missing %}
+      <a name="top"></a>
+      <div class="c12 row">
+	<p>Jump to <a href="#table">table of accepted all contributions</a>,
+	  <a href="#talks">accepted talks</a>, or 
+	  <a href="#posters">accepted posters</a>.
+	</p>
+      </div>
+
+      <a name="table"></a>
+      <h2><span>Accepted contributions</span></h2>
+      <div class="c12 row">
+	<p>If you submitted an abstract before the talk deadline and do not see it listed here, please contact us at
+	  <a href="mailto:tasc5@mit.edu">tasc5@mit.edu</a>.</p>
+        <p>Use the table below to view and search abstracts or jump directly
+	  to a listing of all <a href="#talks">talks</a> or <a href="#posters">posters</a>.
+	</p>
+
+	<table id="example" class="display" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Author</th>
+              <th>Title</th>
+	      <th>Authorlist</th>
+	      <th>Affiliations</th>
+	      <th>Abstract</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Author</th>
+              <th>Title</th>
+	      <th>Authorlist</th>
+	      <th>Affiliations</th>
+	      <th>Abstract</th>
+            </tr>
+          </tfoot>
+	</table>
+      </div>
+      <a name="talks"></a>
+	{% if talks|count == 0 %}
+      <div class="c12 row">
+	<p>Contributed talks will be listed here after the SOC has reviewed the
+	submitted abstracts.</p>
+      </div>
+	{% else %}
+	{% for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'] %}
+        <a name="talkson{{ day }}"></a>
+	<h2><span>Talks on {{ day }}</span></h2>
+	<div class="c12 row">
+        {% for t in talks %}
+	{% if t['day'] == day[:3] %}
+	{{ abstracts.single_abstract_any_type(t) }}
+	{% endif %}
+	{% endfor %}
+	</div>
+	{% endfor %}
+	{% endif %}
+	
+      <a name="posters"></a>
+      <h2><span>Posters</span></h2>
+      <div class="c12 row">
+	{% if posters|count == 0 %}
+	<p>Posters will be listed here after the SOC has reviewed the submitted abstracts.</p>
+	{% else %}
+        {% for t in posters %}
+	{{ abstracts.single_abstract_any_type(t) }}
+	{% endfor %}
+	{% endif %}
+
+      </div>  
+      {% if unassigned|count > 0 %}
+      <a name="unassigned"></a>
+      <h2><span>Unassigned contributions</span></h2>
+      <div class="c12 row">
+        {% for t in unassigned %}
+	{{ abstracts.single_abstract_any_type(t) }}
+	{% endfor %}
+      </div>  
+	{% endif %}
+
+     <p></p>
+
+    </div>
+
+{% endblock content %}

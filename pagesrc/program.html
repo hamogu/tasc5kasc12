@@ -2,6 +2,13 @@
 {% set active_page = "Program" %}
 
 {% block content %}
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']],
+processEscapes: true}
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 <div class="container clearfix mt-100 mb-20">
   {% include "templates/globalmessage.html" ignore missing %}
@@ -67,37 +74,29 @@ interest for TASC5/KASC12 attendees.</strong></p>
 
        </div>
 
-       <h2><span>Invited speakers</span></h2>
-      <div class="row">
-	<div class="c6">
-	  <ul class="listing">
-	    <li>Tim Bedding (University of Sydney)</li>
-	    <li>Earl Bellinger (Aarhus University)</li>
-	    <li>Clara Brasseur (STScI)</li>
-	    <li>Stéphane Charpinet (IRAP, Toulouse)</li>
-	    <li>Cristina Chiappini (AIP, Potsdam)</li>
-	    <li>Jessie Dotson (NASA Kepler/K2)</li>
-	    <li>Adina Feinstein (University of Chicago)</li>
-	    <li>Dan Foreman-Mackey (Flatiron Institute)</li>
-	    <li>Oliver Hall (University of Birmingham)</li>
-	    <li>Dan Huber (University of Hawaii)</li>
-	  </ul>
-	</div>
-	<div class="c6">
-	  <ul class="listing">
-	    <li>Katrien Kolenberg (KU Leuven)</li>
-	    <li>Don Kurtz (University of Central Lancashire)</li>
-	    <li>András Pál (Konkoly Observatory)</li>
-	    <li>May Gade Pedersen (KU Leuven)</li>
-	    <li>Elisa Quintana (NASA Goddard)</li>
-	    <li>George Ricker (MIT)</li>
-	    <li>Rachael Roettenbacher (Yale University)</li>
-	    <li>Jamie Tayar (University of Hawaii)</li>
-	    <li>Andrew Tkachenko (KU Leuven)</li>
-	    <li>Vincent Van Eylen (Princeton University)</li>
-	  </ul>
-	</div>
-
-</div>
+       <h2><span>Preliminary schedule by day</span></h2>
+       <div class="c12 row">
+        {% for p in data %}
+	<h3>{{ p[0] }}</h3>
+	<table class="schedule" border="2">
+	  <tr class="title">
+	    <td>Time</td><td>Topic</td><td>Speaker</td><td>Title</td>
+	  </tr>
+	  {% for row in p[1] %}
+	  <tr>
+	    <td {% if row['type'] == 'schedule' %}class="socialac"{% endif %}>{{ row['time'] }}</td>
+	    <td {% if row['type'] == 'schedule' %}class="socialac"{% endif %}>{{ row['topic'] }}</td>
+	    <td {% if row['type'] == 'schedule' %}class="socialac"{% endif
+	    %}>{{ row['First author'] }}</td>
+	    <td {% if row['type'] == 'schedule' %}class="socialac">{{row['Title of presentation'] }}{% else %}>
+	      <a href="abstracts.html#{{ row['Title of presentation'] }}">{{ row['Title of presentation'] }}</a>
+	      {% endif %}
+	    </td>
+	  </tr>
+{% endfor %}
+	</table>
+	<br>
+	{% endfor %}
+       </div>
 
 {% endblock content %}

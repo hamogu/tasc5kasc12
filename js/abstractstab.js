@@ -3,10 +3,6 @@ function format ( d ) {
     // `d` is the original data object for the row
     return '<table cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">'+
         '<tr>'+
-            '<td>idnum:</td>'+
-            '<td>'+d.idnum+'</td>'+
-        '</tr>'+
-        '<tr>'+
             '<td>Authors:</td>'+
             '<td>'+d.authorlist+'</td>'+
         '</tr>'+
@@ -44,7 +40,7 @@ $(document).ready(function() {
                 "defaultContent": ''
             },
             { "data": "type" },
-            { "data": "idnum" },
+            { "data": "author" },
             { "data": "title" },
             { "data": "authorlist", "visible": false },
 	    { "data": "affiliations", "visible": false },
@@ -54,7 +50,7 @@ $(document).ready(function() {
 	    { "data": "loctime", visible: false},
 	    { "data": "index", visible: false},
         ],
-        "order": [[2, 'asc']],
+        "order": [[10, 'asc']],
     } );
      
     // Add event listener for opening and closing details

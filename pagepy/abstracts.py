@@ -52,7 +52,8 @@ def parse_day_time(day, timestr, end=False):
 contribtype = {'': 'not assigned',
                'poster': 'poster',
                'invited': 'invited review',
-               'contributed': 'contributed talk'}
+               'talk': 'contributed talk',
+               'invited software': 'invited software presentation'}
 
 
 def combine_affils(affils):
@@ -83,25 +84,20 @@ def write_json_abstracts(abstr):
     data = {'data': []}
     for row in abstr:
         data['data'].append({'type': contribtype[row['type']],
-                             #'author': row['First author'],
-                             #'authorlist': row['Authors'],
-                             #'affiliations': row['affiliations'],
-                             'author': 'anonymous',
-                             'authorlist': 'anonymous',
-                             'affiliations': 'anonymous',
-
+                             'author': row['First author'],
+                             'authorlist': row['authorlist'],
+                             'affiliations': row['affiliations'],
                              'abstract': '<p class="abstract">' + row['Abstract'].replace('\n\n', '</p><p class="abstract">') + '</p>',
                              'title': row['Title of presentation'],
-                             #'authoremail': "<a href='mailto:{0}'>{0}</a>".format(row['Email Address']) if row['Publish first author contact information?'] else '--',
-                             #'link': '<a href="{0}">{0}</a>'.format(row['Link to electronic material']) if row['Link to electronic material'] else '--',
-                             #'loctime': loctime(row),
-                             #'index': row['index'],
+                             'authoremail': "<a href='mailto:{0}'>{0}</a>".format(row['Email Address']) if row['Publish first author contact information?'] else '--',
+                             'link': '<a href="{0}">{0}</a>'.format(row['Link to electronic material']) if row['Link to electronic material'] else '--',
+                             'loctime': loctime(row),
+                             'index': row['index'],
                              'authoremail': '--',
                              'link': '--',
                              'loctime': loctime(row),
                              'index': row['index'],
-                             'idnum': row['idnum']
-                             })
+                         })
     with open('data/abstracts.json', 'w') as fp:
         json.dump(data, fp)
 
@@ -190,13 +186,14 @@ def data(**kwargs):
 
 
 
-    ind_talk = (abstr['type'] == 'invited') | (abstr['type'] == 'contributed')
+    ind_talk = (abstr['type'] == 'invited') | (abstr['type'] == 'talk') |(abstr['type'] == 'invited software')
     ind_poster = abstr['type'] == 'poster'
 
     talks = abstr[ind_talk]
-    talks.sort(['binary_time', 'type', 'idnum'])
+    talks.sort(['binary_time', 'type'])
     posters = abstr[ind_poster]
-    posters['intnumber'] = [int(i) for i in posters['poster number']]
+    #posters['intnumber'] = [int(i) for i in posters['poster number']]
+    posters['intnumber'] = 'not yet assigned'
     posters.sort(['intnumber', 'First author'])
 
     # List all entries that do not have a valid type
