@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import datetime
 import numpy as np
 import csv
@@ -93,10 +94,6 @@ def write_json_abstracts(abstr):
                              'link': '<a href="{0}">{0}</a>'.format(row['Link to electronic material']) if row['Link to electronic material'] else '--',
                              'loctime': loctime(row),
                              'index': row['index'],
-                             'authoremail': '--',
-                             'link': '--',
-                             'loctime': loctime(row),
-                             'index': row['index'],
                          })
     with open('data/abstracts.json', 'w') as fp:
         json.dump(data, fp)
@@ -113,7 +110,8 @@ def process_google_form_value(tab, **kwargs):
     This function add new colums to a table ``tab``.
     '''
     tab['authorlist'] = [r.split('\n') for r in tab['Authorlist']]
-    tab['First author'] = [r[0].split('(')[0].strip() for r in tab['authorlist']]
+    tab['First author'] = [re.split('[\(,+]', r[0])[0].strip() for r in tab['authorlist']]
+
     tab['affiliations'] = [r.split('\n') for r in tab['Affiliations']]
     tab['affiliations'] = [combine_affils(r) for r in tab['affiliations']]
     tab['binary_time'] = [parse_day_time(r['day'], r['time']) for r in tab]
@@ -210,8 +208,8 @@ def data(**kwargs):
     abstr['index'] = np.arange(1.0 * len(abstr))
     write_json_abstracts(abstr)
 
-    notype['intnumber'] = [int(i) for i in notype['idnum']]
-    notype.sort(['intnumber'])
+    #notype['intnumber'] = [int(i) for i in notype['idnum']]
+    #notype.sort(['intnumber'])
     unass = notype if kwargs['output_unassigned'] else []
 
     return {'talks': talks, 'posters': posters, 'unassigned': unass}
