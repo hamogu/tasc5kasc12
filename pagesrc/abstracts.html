@@ -1,6 +1,6 @@
 {% extends "templates/basic.html" %}
 {% import "templates/abstracts_helper.html" as abstracts %}
-{% set active_page = "Abstracts" %}
+{% set active_page = "Presentations" %}
 
 {% block content %}
 <script type="text/x-mathjax-config">
@@ -16,7 +16,6 @@ processEscapes: true}
 
     <div class="container clearfix mt-100 mb-20">
       {% include "templates/globalmessage.html" ignore missing %}
-      {% include "templates/timeline.html" ignore missing %}
       <a name="top"></a>
       <div class="c12 row">
 	<p>Jump to <a href="#table">table of accepted all contributions</a>,
@@ -24,6 +23,33 @@ processEscapes: true}
 	  <a href="#posters">accepted posters</a>.
 	</p>
       </div>
+
+<h2><span id="Talks">Talks</span></h2>
+<div class="c12 row">
+  <p><strong>Invited speakers should plan for a talk of  25 min plus 5 min for
+  questions. Contributed talks should be 12 min long plus 3 min for questions
+  and invited software presentations should be 20 min plus 5 min for questions</strong>. The resolution of the projector is 1920 x 1080 (so the format is 16:9). Presentations need to be uploaded onto our computer before the talk, so contact an LOC member at least 2 hours before your talk. Our computers provide standard presentation software for pdf, PowerPoint, KeyNote, LibreOffice and OpenOffice as well as webbrowsers and software for common movie formats. If you have any special requirements, please contact us at <a href="mailto:tasc5@mit.edu">tasc5@mit.edu</a> <strong>before the conference</strong>.</p>
+</div>
+
+<h2><span id="Posters">Posters</span></h2>
+<div class="c12 row">
+  <p>Depending on the number of posters, posters may be displayed throughout
+  the conference (Monday to Friday) or in two blocks. We will provide all hardware required to hang up posters. The space for each poster is a square where each side is $$1.75\times10^{-9}R_{\odot}=122\;\textrm{cm}=4.0\;\textrm{ft}$$ long.
+  </p>  
+
+  <p>If you like to print your poster on campus, MIT has a print center called
+  <a href="https://copytech.mit.edu">copytech</a> on the ground floor of the
+  Stratton Student Center (84 Massachusetts Ave, Cambridge, MA 02139). The
+  print center is on <strong> on weekdays only</strong>. Depending on the size, a typical poster costs about 100\$. 
+Please make sure that you submit the order at least 2 business days before the
+  conference and we encourage you to call them at (617) 258-0859 to confirm
+  your order and pickup plan. Another option to print your poster is the FedEx
+  Office close to the campus at 600 Technology Square, Cambridge, MA
+  02139. You can <a href="mailto:usa0992@fedex.com"> email your poster</a> and
+  call their office at (617) 494-5905 to confirm your order.
+  </p>
+</div>
+
 
       <a name="table"></a>
       <h2><span>Accepted contributions</span></h2>
