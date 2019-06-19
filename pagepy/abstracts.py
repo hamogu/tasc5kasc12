@@ -133,13 +133,14 @@ def process_google_form_value(tab, **kwargs):
     # marked otherwise
     # Want to edit col, but might be too small to fit the string,
     # so make new col first
-    newtype = Column(tab['typepreference'], dtype='<U20')
+    newtype = Column(tab['typepreference'], dtype='<U40')
     if kwargs['autoacceptposters']:
-        newtype[(newtype == '') & (tab['typepreference'] == 'poster')] = 'poster'
+        newtype[(newtype == '') & (tab['typepreference'] == 'Poster')] = 'poster'
         tab['type'] = newtype
 
     # Now some checks
     ind_poster = tab['type'] == 'poster'
+    print(ind_poster)
     posters = tab[ind_poster]
 
     # check it's a number otherwise sort will fail because string sorting will
@@ -191,6 +192,7 @@ def data(**kwargs):
     talks.sort(['binary_time', 'type'])
     posters = abstr[ind_poster]
     #posters['intnumber'] = [int(i) for i in posters['poster number']]
+    print(set(abstr['type'].data))
     posters['intnumber'] = 'not yet assigned'
     posters.sort(['intnumber', 'First author'])
 
