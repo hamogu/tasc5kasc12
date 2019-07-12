@@ -90,7 +90,7 @@ interest for TASC5/KASC12 attendees.</strong></p>
 	    <td {% if row['type'] == 'schedule' %}class="socialac"{% endif %}>{{ row['topic'] }}</td>
 	    <td {% if row['type'] == 'schedule' %}class="socialac"{% endif
 	    %}>{{ row['First author'] }}</td>
-	    <td {% if row['type'] == 'schedule' %}class="socialac">{{row['Title of presentation'] }}{% else %}>
+	    <td {% if row['type'] == 'schedule' %}class="socialac">{{row['Title of presentation']|safe }}{% else %}>
 	      <a href="abstracts.html#{{ row['Title of presentation'] }}">{{ row['Title of presentation'] }}</a>
 	      {% endif %}
 	    </td>
