@@ -67,7 +67,7 @@ def combine_affils(affils):
 def loctime(row):
     if row['type'] == 'poster':
         return 'poster number: {}'.format(row['poster number'])
-    elif (row['type'] == 'invited') or (row['type'] == 'contributed'):
+    elif (row['type'] == 'invited') or (row['type'] == 'talk'):
         if ('day' in row.colnames) and (row['day'] != ''):
             d = row['day']
         else:
