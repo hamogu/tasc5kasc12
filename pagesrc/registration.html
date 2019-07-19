@@ -6,7 +6,29 @@
 <div class="container clearfix mt-100 mb-20">
   {% include "templates/globalmessage.html" ignore missing %}
   {% include "templates/timeline.html" ignore missing %}
-  
+
+  <h2><span>List of registered participants</span></h2>
+  <div class="c12 row">
+  <p>Below is a list of registered participants (excluding participants that 
+  explicitly requested not to be listed).</p>
+     <div class="row">
+	<div class="c6">
+	  <ul class="listing">
+	    {% for m in reglist[:60] %}
+	    <li>{{m['out']}}</li>
+	    {% endfor %}
+	  </ul>
+	</div> 
+	<div class="c6">
+	  <ul class="listing">
+	    {% for m in reglist[60:] %}
+	    <li>{{m['out']}}</li>
+	    {% endfor %}
+	  </ul>
+	</div> 
+     </div>
+   </div>
+<div class="clearfix"></div>
   <h2><span>Registration</span></h2>
   <div class="c12 row">
     <h3>Online Registration</h3>
